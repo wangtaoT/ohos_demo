@@ -1,0 +1,12 @@
+{
+  "name": "library_flutter",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@ohos/flutter_module": "file:../har/flutter_module.har",
+    "@ohos/flutter_ohos": "file:../har/flutter.har"
+  }
+}

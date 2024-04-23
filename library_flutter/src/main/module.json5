@@ -1,0 +1,11 @@
+{
+  "module": {
+    "name": "library_flutter",
+    "type": "har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1"
+    ]
+  }
+}

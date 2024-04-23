@@ -1,0 +1,7 @@
+{
+  "src": [
+    "pages/SplashPage",
+    "pages/Index",
+    "pages/Three"
+  ]
+}
