@@ -133,6 +133,11 @@ struct Index {
               }
             });
           })
+        Button('商品详情')
+          .width('80%')
+          .onClick(() => {
+            router.pushUrl({ url: 'pages/MallGoodsDetailPage' })
+          })
       }
       .padding({ top: AppStorage.get<number>('statusBarHeight') })
     }

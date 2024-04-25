@@ -25,7 +25,6 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    AppStorage.setOrCreate<number>('statusBarHeight', AppConstants.DEFAULT_STATUS_HEIGHT);
     WindowUtil.requestFullScreen(windowStage, this.context);
     windowStage.loadContent('pages/SplashPage', localStorage);
 
@@ -33,7 +32,6 @@ export default class EntryAbility extends UIAbility {
   }
 
   onWindowStageRestore(windowStage: window.WindowStage): void {
-    AppStorage.setOrCreate<number>('statusBarHeight', AppConstants.DEFAULT_STATUS_HEIGHT);
     WindowUtil.requestFullScreen(windowStage, this.context);
   }
 
