@@ -6,8 +6,8 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@ohos/commons": "file:../commons",
-    "@ohos/library_flutter": "file:../library_flutter",
+    "@ohos/commons": "file:../library_commons",
+    "@ohos/library_flutter": "file:../library_flutter"
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "module": {
-    "name": "commons",
+    "name": "library_commons",
     "type": "har",
     "deviceTypes": [
       "default",

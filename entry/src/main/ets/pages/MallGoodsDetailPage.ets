@@ -1,8 +1,17 @@
 import router from '@ohos.router'
+import { MallDetailSkuDialog } from '../widget/MallDetailSkuDialog';
+import { PriceView } from '../widget/PriceView'
 
 @Entry
 @Component
 struct MallGoodsDetailPage {
+  skuDialog: CustomDialogController = new CustomDialogController({
+    builder: MallDetailSkuDialog(),
+    alignment: DialogAlignment.Bottom,
+    autoCancel: true,
+    customStyle: true
+  });
+
   build() {
     Column() {
       Stack() {
@@ -13,13 +22,25 @@ struct MallGoodsDetailPage {
 
           //价格区域
           ListItem() {
-            Column() {
+            Row() {
               Text() {
-                Span('¥').fontSize('15fp').fontColor('#FFFE2442')
-                Span('100.50').fontSize('24fp').fontColor('#FFFE2442')
+                Span('¥').fontSize('15fp').fontColor($r('app.color.mall_theme_color'))
+                Span('100.50').fontSize('24fp').fontColor($r('app.color.mall_theme_color'))
                   .fontWeight(FontWeight.Bold)
               }
-            }.width('100%').alignItems(HorizontalAlign.Start).padding({ left: 15 })
+
+              Row() {
+                Text() {
+                  Span('预估到手').fontSize('12fp').fontColor(Color.White)
+                }.padding({ top: 5, right: 2 })
+
+                PriceView({ price: '999' })
+              }
+              .backgroundColor($r('app.color.mall_theme_color'))
+              .borderRadius(22)
+              .padding({ left: 12, right: 12, top: 4, bottom: 4 })
+              .margin({ left: 8 })
+            }.width('100%').padding({ left: 15 }).margin({ top: 16 })
           }
 
           //标题区域
@@ -33,7 +54,7 @@ struct MallGoodsDetailPage {
               }
 
               Text('已售99999').fontColor('#FF666666').fontSize('13fp')
-            }.alignItems(HorizontalAlign.Start).margin({ left: 15, right: 8 })
+            }.alignItems(HorizontalAlign.Start).margin({ left: 15, right: 8, top: 18 })
           }
 
           //选择区域
@@ -45,15 +66,24 @@ struct MallGoodsDetailPage {
                 Image($r('app.media.icon_arrow_right_FF999999')).width(12).height(12)
               }
               .padding({ top: 13, bottom: 13, left: 12, right: 8 })
+              .onClick(() => {
+                this.skuDialog.open()
+              })
 
-              Divider().height(0.5).backgroundColor('#FFF8F8F8').margin({ left: 12, right: 12 })
+              Divider()
+                .height(0.5)
+                .color('#FFF8F8F8')
+                .margin({ left: 12, right: 12 })
               Row() {
                 Text('物流').fontColor('#FF666666').fontSize('13fp')
                 Text('xxxxxxxxxxxx').fontColor('#FF333333').layoutWeight(1).margin({ left: 18 })
               }
               .padding({ top: 13, bottom: 13, left: 12, right: 8 })
 
-              Divider().height(0.5).backgroundColor('#FFF8F8F8').margin({ left: 12, right: 12 })
+              Divider()
+                .height(0.5)
+                .color('#FFF8F8F8')
+                .margin({ left: 12, right: 12 })
               Row() {
                 Text('参数').fontColor('#FF666666').fontSize('13fp')
                 Text('xxxxxxxxxxxx').fontColor('#FF333333').layoutWeight(1).margin({ left: 18 })
@@ -110,7 +140,9 @@ struct MallGoodsDetailPage {
     .padding({ left: 15, right: 15 })
   }
 
-  //轮播图
+  /**
+   * 轮播图
+   */
   @Builder
   getMallGoodsDetailTopImageWidget() {
     Swiper() {
@@ -152,13 +184,13 @@ struct MallGoodsDetailPage {
 
         Row() {
           Button("加入购物车", { type: ButtonType.Normal })
-            .fontColor('#FFFE2442')
+            .fontColor($r('app.color.mall_theme_color'))
             .backgroundColor('#FFFFEFEF')
             .borderRadius({ topLeft: 22, bottomLeft: 22 })
             .layoutWeight(1)
 
           Button("立即购买", { type: ButtonType.Normal })
-            .backgroundColor('#FFFE2442')
+            .backgroundColor($r('app.color.mall_theme_color'))
             .borderRadius({ topRight: 22, bottomRight: 22 })
             .layoutWeight(1)
         }
