@@ -1,6 +1,4 @@
 //价格组件
-
-
 @Component
 export struct PriceView {
   @Prop fontSize: string = '20fp'

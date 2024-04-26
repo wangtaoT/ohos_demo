@@ -53,7 +53,16 @@ struct MallGoodsDetailPage {
                   .fontColor('#FF252525')
               }
 
-              Text('已售99999').fontColor('#FF666666').fontSize('13fp')
+              Text('24h发货')
+                .fontSize('12fp')
+                .fontColor($r('app.color.mall_theme_color'))
+                .borderWidth('0.5')
+                .borderColor('#FFFFCFD8')
+                .backgroundColor(Color.White)
+                .padding({ left: 4, right: 4, top: 1, bottom: 1 })
+                .margin({ top: 6 })
+
+              Text('已售99999').fontColor('#FF666666').fontSize('13fp').margin({ top: 6 })
             }.alignItems(HorizontalAlign.Start).margin({ left: 15, right: 8, top: 18 })
           }
 

@@ -7,13 +7,13 @@ export struct MallDetailSkuDialog {
       Row() {
         Image($r('app.media.ic_goods')).height(60).width(60).borderRadius(5)
         Blank()
-        Text('关闭')
-          .onClick(() => {
-            this.controller?.close()
-          })
+        Image($r('app.media.icon_dialog_close')).height(26).width(26).onClick(() => {
+          this.controller?.close()
+        })
       }
       .width('100%')
-      .padding({ left: 13, right: 13 })
+      .padding({ left: 13, right: 13, top: 13 })
+      .alignItems(VerticalAlign.Top)
 
       //规格
       List() {
@@ -27,13 +27,21 @@ export struct MallDetailSkuDialog {
             }.margin({ top: 12 })
           }
           .width('100%')
-          .backgroundColor(Color.White)
-          .borderRadius(8)
           .alignItems(HorizontalAlign.Start)
           .padding({ top: 15, bottom: 15, left: 12, right: 12 })
-          .margin({ left: 8, right: 8, top: 13 })
+        }
+
+        ListItem() {
+          Row() {
+            Text('规格').fontSize('13fp').fontColor('#FF1F1F1F')
+            Text('每人限购1件').fontSize('12fp').fontColor('#FF999999').margin({ left: 10 })
+          }.width('100%')
+          .padding({ bottom: 22, left: 12, right: 12 })
         }
       }.constraintSize({ minHeight: 200, maxHeight: 600 })
+      .backgroundColor(Color.White)
+      .borderRadius(8)
+      .margin({ left: 8, right: 8, top: 13 })
 
       Row() {
         Button('立即购买', { type: ButtonType.Normal })
@@ -53,6 +61,7 @@ export struct MallDetailSkuDialog {
     .borderRadius({ topLeft: 16, topRight: 16 })
   }
 
+  //规格item
   @Builder
   getSkuItemView() {
     Text('1fgfgfgfg1fgfgfgfg1fgfgfgfg')
