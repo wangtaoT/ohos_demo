@@ -138,6 +138,11 @@ struct Index {
           .onClick(() => {
             router.pushUrl({ url: 'pages/MallGoodsDetailPage' })
           })
+        Button('发布动态')
+          .width('80%')
+          .onClick(() => {
+            router.pushUrl({ url: 'pages/PublishDynamicPage' })
+          })
       }
       .padding({ top: AppStorage.get<number>('statusBarHeight') })
     }

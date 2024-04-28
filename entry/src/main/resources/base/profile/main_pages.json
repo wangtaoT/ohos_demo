@@ -3,6 +3,7 @@
     "pages/SplashPage",
     "pages/Index",
     "pages/Three",
-    "pages/MallGoodsDetailPage"
+    "pages/MallGoodsDetailPage",
+    "pages/PublishDynamicPage"
   ]
 }
